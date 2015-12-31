@@ -110,14 +110,13 @@ html(lang='en')
         .row
           .col-xs-12.text-center
             .btn-toolbar
-              a.btn.btn-link(href="https://twitter.com/bobby_lucybot")
-                i.fa.fa-github
-              a.btn.btn-link(href="https://twitter.com/bobby_lucybot")
-                i.fa.fa-linkedin
-              a.btn.btn-link(href="https://twitter.com/bobby_lucybot")
-                i.fa.fa-twitter
-              a.btn.btn-link(href="https://twitter.com/bobby_lucybot")
-                i.fa.fa-email
+              mixin social-link(link, icon)
+                a.btn.btn-link(href=link)
+                  i.fa(class="fa-#{icon}")
+              +social-link("https://twitter.com/bobby_lucybot", 'github')
+              +social-link("https://twitter.com/bobby_lucybot", 'linkedin')
+              +social-link("https://twitter.com/bobby_lucybot", 'twitter')
+              +social-link("https://twitter.com/bobby_lucybot", 'envelope')
 
     footer.text-center
       .footer-below
