@@ -50,50 +50,30 @@ html(lang='en')
             h2 Portfolio
             hr.circle-primary
         .row
-          mixin portfolio-item-icon(icon, caption, link, color, bgcolor)
-            .col-xs-12.portfolio-item
-              a.portfolio-link(href=link data-toggle='modal' target='_blank')
-                .caption
-                  .caption-content
-                    span= caption
-                .fake-image(style="background-color: #{bgcolor}; color: #{color}")
-                  i.fa(class='fa-' + icon)
-          mixin portfolio-item(image, caption, link)
-            .col-xs-12.portfolio-item
-              a.portfolio-link(href=link, data-toggle='modal', target="_blank")
-                .caption
-                  .caption-content
-                    span= caption
-                img(src=image)
-          mixin portfolio-item-text(text, caption, link, classname)
-            .col-xs-12.portfolio-item(class=classname)
-              a.portfolio-link(href=link, data-toggle='modal', target="_blank")
-                .caption
-                  .caption-content
-                    span= caption
-                .fake-text-image.text-center
-                  span #{text}
-          +portfolio-item('/img/portfolio/anyapi.png',
+          mixin portfolio-item(title, caption, link)
+            .col-xs-12
+              h4
+                a(href=link)= title
+              p= caption
+              
+          +portfolio-item('AnyAPI',
                           'AnyAPI provides documentation and test consoles for over 100 public APIs',
                           'https://any-api.com')
-          +portfolio-item-icon('css3',
-                               'Strapping allows you to build your own theme for Bootstrap.',
-                               '/strapping', '#333', '#ef4836')
-          +portfolio-item('/img/portfolio/webans.png',
+          +portfolio-item('Strapping',
+                          'Strapping allows you to build your own theme for Bootstrap.',
+                          'https://bbrennan.info/strapping')
+          +portfolio-item('Question Answering',
                           'An example of work I did in open-domain, long-form question answering while working at Google. See LinkedIn for more details',
                           'https://www.google.com/search?q=Why+is+the+sky+blue?')
-          +portfolio-item-icon('database',
-                               'GitBack is an open source project that allows NodeJS projects to use Git as a backend',
-                               'https://github.com/bobby-brennan/gitback', '#CF000F', '#6C7A89')
-          +portfolio-item('/img/portfolio/posted.png',
+          +portfolio-item('GitBack',
+                          'GitBack is an open source project that allows NodeJS projects to use Git as a backend',
+                          'https://github.com/bobby-brennan/gitback')
+          +portfolio-item('Posted',
                           'Posted uses natural language processing to detect breaking news on any topic in real time',
                           'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
-          +portfolio-item-icon('exchange',
-                               'api-spec-converter is an open source tool for converting between API description formats such as Swagger and I/O Docs',
-                               '/spec-converter', '#EB9532', '#E4F1FE')
-          +portfolio-item('/img/portfolio/nostop.png',
-                          'A brief study of Betteridge\'s assertion that all headlines in the form of a question can be answered \'no.\'',
-                          'http://www.bbrennan.info:3020/nostop')
+          +portfolio-item('API Spec Converter',
+                          'api-spec-converter is an open source tool for converting between API description formats such as Swagger and I/O Docs',
+                          '/spec-converter')
     // About Section
     section#about.success
       .container
