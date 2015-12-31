@@ -1,0 +1,163 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Bobby Brennan
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/freelancer.css', rel='stylesheet')
+    link(href='/css/index.css', rel='stylesheet')
+    link(rel="stylesheet" href="/bower/fontawesome/css/font-awesome.min.css")
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    script(src="/js/google-analytics.js")
+  body#page-top.index
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#page-top') Bobby Brennan
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href='#page-top')
+            li.page-scroll
+              a(href='http://www.linkedin.com/in/bobbybrennan') LinkedIn
+            li.page-scroll
+              a(href='#portfolio') Portfolio
+            li.page-scroll
+              a(href='#about') About
+            li.page-scroll
+              a(href='#contact') Contact
+    header
+      img.header-img(src="/img/headshot.jpg")
+      .container
+        .row
+          .col-lg-12
+            h1.name Bobby Brennan
+            h2.skills Software Engineer
+    section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Portfolio
+            hr.circle-primary
+        .row
+          mixin portfolio-item-icon(icon, caption, link, color, bgcolor)
+            .col-xs-12.portfolio-item
+              a.portfolio-link(href=link data-toggle='modal' target='_blank')
+                .caption
+                  .caption-content
+                    span= caption
+                .fake-image(style="background-color: #{bgcolor}; color: #{color}")
+                  i.fa(class='fa-' + icon)
+          mixin portfolio-item(image, caption, link)
+            .col-xs-12.portfolio-item
+              a.portfolio-link(href=link, data-toggle='modal', target="_blank")
+                .caption
+                  .caption-content
+                    span= caption
+                img(src=image)
+          mixin portfolio-item-text(text, caption, link, classname)
+            .col-xs-12.portfolio-item(class=classname)
+              a.portfolio-link(href=link, data-toggle='modal', target="_blank")
+                .caption
+                  .caption-content
+                    span= caption
+                .fake-text-image.text-center
+                  span #{text}
+          +portfolio-item('/img/portfolio/anyapi.png',
+                          'AnyAPI provides documentation and test consoles for over 100 public APIs',
+                          'https://any-api.com')
+          +portfolio-item-icon('css3',
+                               'Strapping allows you to build your own theme for Bootstrap.',
+                               '/strapping', '#333', '#ef4836')
+          +portfolio-item('/img/portfolio/webans.png',
+                          'An example of work I did in open-domain, long-form question answering while working at Google. See LinkedIn for more details',
+                          'https://www.google.com/search?q=Why+is+the+sky+blue?')
+          +portfolio-item-icon('database',
+                               'GitBack is an open source project that allows NodeJS projects to use Git as a backend',
+                               'https://github.com/bobby-brennan/gitback', '#CF000F', '#6C7A89')
+          +portfolio-item('/img/portfolio/posted.png',
+                          'Posted uses natural language processing to detect breaking news on any topic in real time',
+                          'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
+          +portfolio-item-icon('exchange',
+                               'api-spec-converter is an open source tool for converting between API description formats such as Swagger and I/O Docs',
+                               '/spec-converter', '#EB9532', '#E4F1FE')
+          +portfolio-item('/img/portfolio/nostop.png',
+                          'A brief study of Betteridge\'s assertion that all headlines in the form of a question can be answered \'no.\'',
+                          'http://www.bbrennan.info:3020/nostop')
+    // About Section
+    section#about.success
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 About
+            hr.circle-light
+        .row.text-center
+          .col-lg-2
+          .col-lg-8
+            p.
+              Bobby is an experienced software engineer with degrees in Computer Science, Mathematics, and Linguistics.
+              He specializes in Machine Learning and Natural Language Processing.
+              However, he is at heart a generalist, loves learning new technologies, and is comfortable working on frontends and backends alike.
+          .col-lg-2
+    // Contact Section
+    section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Contact
+            hr.circle-primary
+        .row
+          .col-lg-8.col-lg-offset-2
+            form#contactForm(name='sentMessage', novalidate='')
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label Name
+                  input#name.form-control(type='text', placeholder='Name')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label Email Address
+                  input#email.form-control(type='email', placeholder='Email Address')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label Phone Number
+                  input#phone.form-control(type='tel', placeholder='Phone Number')
+                  p.help-block.text-danger
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  label Message
+                  textarea#message.form-control(rows='5', placeholder='Message')
+                  p.help-block.text-danger
+              br
+              #success
+              .row
+                .form-group.col-xs-12
+                  button.btn.btn-success.btn-lg(type='submit') Send
+    footer.text-center
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              | Copyright &copy; Bobby Brennan 2014
+    .scroll-top.page-scroll.visible-xs.visble-sm
+      a.btn.btn-primary(href='#page-top')
+        i.fa.fa-chevron-up
+    script(src='/js/jquery.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    script(src='/js/classie.js')
+    script(src='/js/cbpAnimatedHeader.js')
+    script(src='/js/jqBootstrapValidation.js')
+    script(src='/js/contact_me.js')
+    script(src='/js/freelancer.js')
