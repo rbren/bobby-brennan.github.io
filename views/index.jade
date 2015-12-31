@@ -49,31 +49,32 @@ html(lang='en')
           .col-lg-12.text-center
             h2 Portfolio
             hr.circle-primary
+        mixin portfolio-item(title, caption, link)
+          .col-xs-12
+            h4
+              a(href=link)= title
+            p= caption
         .row
-          mixin portfolio-item(title, caption, link)
-            .col-xs-12
-              h4
-                a(href=link)= title
-              p= caption
-              
+          h3 Websites and Apps
           +portfolio-item('AnyAPI',
                           'AnyAPI provides documentation and test consoles for over 100 public APIs',
                           'https://any-api.com')
           +portfolio-item('Strapping',
                           'Strapping allows you to build your own theme for Bootstrap.',
                           'https://bbrennan.info/strapping')
-          +portfolio-item('Question Answering',
-                          'An example of work I did in open-domain, long-form question answering while working at Google. See LinkedIn for more details',
-                          'https://www.google.com/search?q=Why+is+the+sky+blue?')
-          +portfolio-item('GitBack',
-                          'GitBack is an open source project that allows NodeJS projects to use Git as a backend',
-                          'https://github.com/bobby-brennan/gitback')
           +portfolio-item('Posted',
                           'Posted uses natural language processing to detect breaking news on any topic in real time',
                           'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
+          h3 Open Source Projects
           +portfolio-item('API Spec Converter',
                           'api-spec-converter is an open source tool for converting between API description formats such as Swagger and I/O Docs',
-                          '/spec-converter')
+                          'https://github.com/lucybot/api-spec-converter')
+          +portfolio-item('Jammin',
+                          'jammin is a NodeJS package for creating RESTful APIs with NodeJS and MongoDB',
+                          'https://github.com/lucybot/jammin')
+          +portfolio-item('GitBack',
+                          'GitBack is an open source project that allows NodeJS projects to use Git as a backend',
+                          'https://github.com/bobby-brennan/gitback')
     // About Section
     section#about.success
       .container
