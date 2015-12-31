@@ -65,7 +65,7 @@ html(lang='en')
             h2 Portfolio
             hr.circle-primary
         mixin portfolio-item(title, caption, link)
-          .col-xs-12
+          .col-xs-12.col-md-8.col-md-offset-2
             h4
               span= title
               span &nbsp;&nbsp;
@@ -82,6 +82,7 @@ html(lang='en')
                           'AnyAPI provides documentation and test consoles for over 100 public APIs',
                           'https://any-api.com')
         h3.text-center Apps
+        .row
           +portfolio-item('Posted',
                           'Posted is an Android app that uses natural language processing to detect breaking news on any topic in real time',
                           'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
