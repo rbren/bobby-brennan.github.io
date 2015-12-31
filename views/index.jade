@@ -52,7 +52,10 @@ html(lang='en')
         mixin portfolio-item(title, caption, link)
           .col-xs-12
             h4
-              a(href=link)= title
+              span= title
+              span &nbsp;&nbsp;
+              a(href=link) View Project 
+                i.fa.fa-external-link
             p= caption
         .row
           h3 Websites and Apps
@@ -60,10 +63,10 @@ html(lang='en')
                           'AnyAPI provides documentation and test consoles for over 100 public APIs',
                           'https://any-api.com')
           +portfolio-item('Strapping',
-                          'Strapping allows you to build your own theme for Bootstrap.',
+                          'Strapping is an open-source GUI for building customized Bootstrap themes.',
                           'https://bbrennan.info/strapping')
           +portfolio-item('Posted',
-                          'Posted uses natural language processing to detect breaking news on any topic in real time',
+                          'Posted is an Android app that uses natural language processing to detect breaking news on any topic in real time',
                           'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
           h3 Open Source Projects
           +portfolio-item('API Spec Converter',
