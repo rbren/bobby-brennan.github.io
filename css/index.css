@@ -45,10 +45,6 @@ header h3 .fa {
   min-width: 100%;
 }
 
-#portfolio .portfolio-item .caption {
-  z-index: 100;
-}
-
 .fake-image {
   padding-bottom: 72.222222%;
   background-color: green;
