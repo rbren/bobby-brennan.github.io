@@ -37,6 +37,10 @@ header h3 .fa {
   vertical-align: middle;
 }
 
+.portfolio-item {
+  margin-bottom: 15px;
+}
+
 .portfolio-item img {
   min-width: 100%;
 }

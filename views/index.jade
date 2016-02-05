@@ -63,14 +63,13 @@ html(lang='en')
             h2 Portfolio
             hr.circle-primary
         mixin portfolio-item(title, caption, link)
-          .col-xs-12.col-md-8.col-md-offset-2
+          .portfolio-item.col-xs-12.col-md-8.col-md-offset-2
             h4
               span= title
-              span &nbsp;&nbsp;
-              small
-                a(href=link) View Project 
-                  i.fa.fa-external-link
             p= caption
+            p
+              a(href=link) View Project 
+                i.fa.fa-external-link
         h3.text-center Websites
         .row
           +portfolio-item('DataFire',
