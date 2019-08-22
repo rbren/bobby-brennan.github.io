@@ -1,3 +1,3 @@
 rm index.html
-jade views/index.jade -o ./
+pug views/index.pug -o ./
 
