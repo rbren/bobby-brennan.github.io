@@ -119,7 +119,7 @@ html(lang='en')
             .btn-toolbar
               mixin social-link(link, icon)
                 a.btn.btn-sm.btn-primary(href=link)
-                  i.fa.fa-2x(class="fa-#{icon}")
+                  i.fa.fa-2x(class="fa-" + icon)
               +social-link("https://github.com/rbren", 'github')
               +social-link("https://www.linkedin.com/in/robert-a-brennan", 'linkedin')
               +social-link("mailto:bobby.brennan@gmail.com", 'envelope')
