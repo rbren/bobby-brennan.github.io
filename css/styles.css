@@ -1,0 +1,35 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1, h2 {
+  text-transform: lowercase;
+}
+
+.container {
+  max-width: 96rem;
+  margin-bottom: 8rem;
+}
+
+.section {
+  margin-top: 8rem;
+}
+
+.social-links {
+  padding-top: 1rem;
+  float: right;
+  font-size: 50%;
+}
+
+.portfolio-item {
+  padding-left: 4rem;
+}
+
+.portfolio-item h4 {
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 4rem;
+}

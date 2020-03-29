@@ -5,139 +5,101 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
-    meta(name='author', content='')
-    title Robert Brennan
-    link(href='/css/bootstrap.min.css', rel='stylesheet')
-    link(href='/css/freelancer.css', rel='stylesheet')
-    link(href='/css/index.css', rel='stylesheet')
+    meta(name='author', content='Robert Brennan')
     link(rel="icon" href="favicon.ico?")
+    title Robert Brennan
+    link(href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.css")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
-    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
-    link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
-    script(src="/js/google-analytics.js")
-  body#page-top.index
-    nav.navbar.navbar-default.navbar-fixed-top
-      .container
-        .navbar-header.page-scroll
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='#page-top') Robert Brennan
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            li.hidden
-              a(href='#page-top')
-            li.page-scroll
-              a(href='#about') About
-            li.page-scroll
-              a(href='#portfolio') Portfolio
-            li.page-scroll
-              a(href='#contact') Contact
-    header
-      img.header-img(src="/img/headshot.jpg")
-      .container
-        .row
-          .col-lg-12
-            h1.name Robert Brennan
-            h2.skills Software Engineer
-    // About Section
-    section#about.success
-      .container
-        .row
-          .col-lg-12.text-center
-            h2 About
-            hr.circle-light
-        .row.text-center
-          .col-lg-2
-          .col-lg-8
-            p.
-              I'm an experienced software engineer with degrees in Computer Science, Mathematics, and Linguistics.
-              I specialize in Developer Tools, Machine Learning, and Natural Language Processing.
-              However, I am at heart a generalist, love learning new technologies, and am comfortable working on frontends and backends alike.
-          .col-lg-2
-    section#portfolio
-      .container
-        .row
-          .col-lg-12.text-center
-            h2 Portfolio
-            hr.circle-primary
-        mixin portfolio-item(title, caption, link)
-          .portfolio-item.col-xs-12.col-md-8.col-md-offset-2
-            h4
-              span= title
-            p= caption
-            h4
-              small
-                a(href=link) View Project 
-                  i.fa.fa-external-link
-        h3.text-center Websites
-        .row
-          +portfolio-item('DataFire.io',
-                          'DataFire is an API integration and task automation platform',
-                          'https://datafire.io')
-          +portfolio-item('AnyAPI',
-                          'AnyAPI provides documentation and test consoles for over 100 public APIs',
-                          'https://any-api.com')
-        h3.text-center Open Source
-        .row
-          +portfolio-item('DataFire Framework',
-                          'The DataFire framework is an MIT-licensed framework for working with APIs, databases, and other services. It drives the DataFire.io platform.',
-                          'https://github.com/DataFire/DataFire')
-          +portfolio-item('API Spec Converter',
-                          'api-spec-converter is a library for converting between API description formats such as Swagger and I/O Docs ',
-                          'https://github.com/lucybot/api-spec-converter')
-          +portfolio-item('rss-parser',
-                          'A lightweight utility for parsing RSS/Atom feeds in Node and the Browser, with over 5,000 downloads/month',
-                          'https://github.com/rbren/rss-parser')
-          +portfolio-item('Strapping!',
-                          'Strapping is an open-source GUI for building customized Bootstrap themes.',
-                          'http://bbrennan.info/strapping')
-        h3.text-center Apps
-        .row
-          +portfolio-item('Posted',
-                          'Posted is an Android app that uses natural language processing to detect breaking news on any topic in real time',
-                          'https://play.google.com/store/apps/details?id=info.bbrennan.posted&hl=en')
-        h3.text-center Writing
-        .row
-          +portfolio-item('JavaScript ES6 Promises - Patterns and Anti-patterns',
-                          'A breif rundown on best practices when using JavaScript Promises',
-                          'https://medium.com/datafire-io/es6-promises-patterns-and-anti-patterns-bbb21a5d0918')
-          +portfolio-item('Upgrading to Async/Await with JavaScript ES8',
-                          'An overview of the benefits of async/await syntax in JavaScript',
-                          'https://medium.com/datafire-io/upgrading-to-async-await-with-javascript-es7-3c67602ea7f8')
-    // Contact Section
-    section#contact.success
-      .container
-        .row
-          .col-lg-12.text-center
-            h2 Contact
-            hr.circle-light
-        .row
-          .col-xs-12.text-center
-            .btn-toolbar
-              mixin social-link(link, icon)
+    link(rel="stylesheet" href="css/styles.css")
+
+  body
+    mixin portfolio-item(title, description, link)
+      .portfolio-item
+        h4
+          a(href=link)= title
+        p= description
+
+    .container
+      .section
+        h1
+          span Robert Brennan
+          .social-links
+            mixin social-link(link, icon)
+              .social-link
                 a.btn.btn-sm.btn-primary(href=link)
                   i.fa.fa-2x(class="fa-" + icon)
-              +social-link("https://github.com/rbren", 'github')
-              +social-link("https://www.linkedin.com/in/robert-a-brennan", 'linkedin')
-              +social-link("mailto:bobby.brennan@gmail.com", 'envelope')
+            +social-link("https://github.com/rbren", 'github')
+            +social-link("https://www.linkedin.com/in/robert-a-brennan", 'linkedin')
+            +social-link("mailto:contact@rbren.io", 'envelope')
 
-    footer.text-center
-      .footer-below
-        .container
-          .row
-            .col-lg-12
-              | Copyright &copy; Robert Brennan 2018
-    .scroll-top.page-scroll.visible-xs.visble-sm
-      a.btn.btn-primary(href='#page-top')
-        i.fa.fa-chevron-up
-    script(src='/js/jquery.js')
-    script(src='/js/bootstrap.min.js')
-    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
-    script(src='/js/classie.js')
-    script(src='/js/cbpAnimatedHeader.js')
-    script(src='/js/jqBootstrapValidation.js')
-    script(src='/js/contact_me.js')
-    script(src='/js/freelancer.js')
+      .section
+        h2 About me
+        p.
+          I'm an experienced software engineer with degrees in Computer Science, Mathematics, and Linguistics.
+          I specialize in Developer Tools, Machine Learning, and Natural Language Processing.
+          However, I am at heart a generalist, love learning new technologies, and am comfortable working on frontends and backends alike.
+
+      .section
+        h2 What I'm up to
+        p.
+          I work at <a href="https://fairwinds.com">Fairwinds</a>, a Kubernetes enablement company,
+          as Director of Open Source Software.
+          I manage a team of six engineers, working to build our first commercial software offering,
+          <a href="https://fairwinds.com/insights">Fairwinds Insights</a>.
+
+      .section
+        h2 My projects
+        p.
+          I love building things. Below are a few selected software projects that
+          I've made, both on my own and with the help of others.
+
+        +portfolio-item('Fairwinds Insights',
+          'Fairwinds Insights is a platform for consolidating and operationalizing Kubernetes auditing tools. I worked with our CTO and VP of Strategy to conceptualize Insights, and built a team of engineers to implement it.',
+          'https://fairwinds.com/insights')
+        +portfolio-item('DataFire.io',
+          'DataFire is an API integration and task automation platform. I built DataFire from scratch, with the help of a few contractors.',
+          'https://datafire.io')
+        +portfolio-item('DocGen',
+          'LucyBot\'s DocGen helps API providers create and maintain API documentation. This is the first commercial product I built from scratch.',
+          'https://lucybot.com/docgen')
+        +portfolio-item('Long Answers',
+          'While working at Google, I wrote an algorithm to extract answers to open-ended questions, like "Why is the sky blue?" The algorithm was incorporated into Google Search in August 2013, and resulted in Patent US9940367B1.',
+          'https://www.google.com/search?q=why+is+the+sky+blue')
+        +portfolio-item('AnyAPI',
+          'AnyAPI provides documentation and test consoles for over 100 public APIs. I built AnyAPI as a way of showing off LucyBot\'s DocGen tooling',
+          'https://any-api.com')
+        +portfolio-item('DataFire Framework',
+          'The DataFire framework is an MIT-licensed framework for working with APIs, databases, and other services. It drives the DataFire.io platform.',
+          'https://github.com/DataFire/DataFire')
+        +portfolio-item('API Spec Converter',
+          'api-spec-converter is a library for converting between API description formats such as Swagger and I/O Docs, with over 10k downloads per week',
+          'https://github.com/lucybot/api-spec-converter')
+        +portfolio-item('rss-parser',
+          'A lightweight utility for parsing RSS/Atom feeds in Node and the Browser, with over 120k downloads per week',
+          'https://github.com/rbren/rss-parser')
+        +portfolio-item('World News',
+          'A visualization of headlines from The Economist',
+          'https://rbren.io/worldnews')
+        +portfolio-item('Stock Screener',
+          'A stock screener that I\'ve heavily customized for my own needs',
+          'https://rbren.io/stockscreener')
+      .section
+        h2 Written work
+        p.
+          Writing has always been a passion of mine. I particularly enjoy technical
+          writing and essays.
+        +portfolio-item('Kubernetes Without Scale: Reasons to Run a Personal Cluster',
+          'A two part series on Container Journal, on how to set up a personal Kubernetes cluster',
+          'https://containerjournal.com/topics/container-ecosystems/kubernetes-without-scale-reasons-to-run-a-personal-cluster/')
+        +portfolio-item('How-to Address Kubernetes Cluster Security',
+          'A rundown of security considerations for anyone running a Kubernetes cluster',
+          'https://www.fairwinds.com/blog/cluster-health-checkup-security')
+        +portfolio-item('JavaScript ES6 Promises - Patterns and Anti-patterns',
+          'A brief rundown on best practices when using JavaScript Promises',
+          'https://medium.com/datafire-io/es6-promises-patterns-and-anti-patterns-bbb21a5d0918')
+        +portfolio-item('Upgrading to Async/Await with JavaScript ES8',
+          'An overview of the benefits of async/await syntax in JavaScript',
+          'https://medium.com/datafire-io/upgrading-to-async-await-with-javascript-es7-3c67602ea7f8')

@@ -1,0 +1,23 @@
+{
+  "name": "rbren.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "rm -f index.html && pug views/index.pug -o ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rbren/rbren.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rbren/rbren.github.io/issues"
+  },
+  "homepage": "https://rbren.io",
+  "dependencies": {
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
