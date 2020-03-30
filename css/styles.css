@@ -15,6 +15,10 @@ h1, h2 {
   margin-top: 8rem;
 }
 
+.section img {
+  max-width: 200px;
+}
+
 .social-links {
   padding-top: 1rem;
   float: right;
